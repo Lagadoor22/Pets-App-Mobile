@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
@@ -11,81 +12,107 @@
 
 
     <TextView
+        android:id="@+id/text_login_layout"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="36dp"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="@color/dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/text_hello_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:text="Olá, conecte-se com sua conta."
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="@color/dark"
         android:textSize="20dp"
-        android:textColor="@color/dark"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_login_layout" />
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp">
-
-        <EditText
-            android:id="@+id/email_login"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:hint="Email"
-            android:padding="15dp"
-            android:background="@drawable/button_login">
-
-        </EditText>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="470dp">
-
-        <EditText
-            android:id="@+id/senha_login"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:hint="Senha"
-            android:padding="15dp"
-            android:background="@drawable/button_login">
-
-        </EditText>
-
-    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Esqueceu a senha?"
-        android:textSize="16dp"
         android:textColor="@color/textDetails2"
-        android:layout_marginTop="530dp"
-        android:layout_marginLeft="220dp"/>
+        android:textSize="16dp"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/senha_login" />
+
+    <EditText
+        android:id="@+id/email_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/button_login"
+        android:hint="Email"
+        android:padding="15dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_login_layout">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/senha_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:hint="Senha"
+        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_login">
+
+    </EditText>
 
     <Button
-        android:layout_width="280dp"
+        android:id="@+id/btn_login_go"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Entrar"
-        android:background="@drawable/button_next"
-        android:textColor="@color/dark"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/button_next"
+        android:text="Entrar"
+        android:textColor="@color/dark"
         android:textSize="18dp"
-        android:layout_marginTop="600dp"
-        style="?android:attr/borderlessButtonStyle"/>
-
-
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/senha_login" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="É novo por aqui? Cadastre-se agora."
-        android:textSize="16dp"
-        android:textColor="@color/dark"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="680dp"/>
+        android:layout_marginTop="16dp"
+        android:text="É novo por aqui? Cadastre-se agora."
+        android:textColor="@color/dark"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login_go"
+        />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
